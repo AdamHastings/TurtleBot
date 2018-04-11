@@ -1,0 +1,2 @@
+lab_turtlebot/turtlebot_commander:lab_turtlebot/turtlebot_recorder
+-DCATKIN_DEVEL_PREFIX=/home/splinter/EE_631_AJP/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/splinter/EE_631_AJP/catkin_ws/install -G Unix Makefiles

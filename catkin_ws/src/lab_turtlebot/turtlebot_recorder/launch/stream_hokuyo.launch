@@ -1,0 +1,11 @@
+<launch>
+  
+  <!-- launch basic turtlebot software -->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+  
+  
+  <!-- launch hokuyo laser -->
+  <node name="hokuyo" pkg="urg_node" type="urg_node" args="/dev/ttyACM0" />
+  
+
+</launch>

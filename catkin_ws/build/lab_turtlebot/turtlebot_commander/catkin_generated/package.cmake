@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "turtlebot_commander")
+set(turtlebot_commander_MAINTAINER "andrew <andrew@todo.todo>")
+set(turtlebot_commander_DEPRECATED "")
+set(turtlebot_commander_VERSION "0.0.0")
+set(turtlebot_commander_BUILD_DEPENDS "geometry_msgs" "roscpp" "rospy" "sensor_msgs" "std_msgs")
+set(turtlebot_commander_RUN_DEPENDS "geometry_msgs" "roscpp" "rospy" "sensor_msgs" "std_msgs")
+set(turtlebot_commander_BUILDTOOL_DEPENDS "catkin")

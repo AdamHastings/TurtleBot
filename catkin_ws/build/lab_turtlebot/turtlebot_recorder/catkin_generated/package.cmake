@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "turtlebot_recorder")
+set(turtlebot_recorder_MAINTAINER "raph <raph@todo.todo>")
+set(turtlebot_recorder_DEPRECATED "")
+set(turtlebot_recorder_VERSION "0.0.0")
+set(turtlebot_recorder_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(turtlebot_recorder_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(turtlebot_recorder_BUILDTOOL_DEPENDS "catkin")

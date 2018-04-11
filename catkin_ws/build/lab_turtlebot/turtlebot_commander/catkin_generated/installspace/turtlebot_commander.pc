@@ -1,0 +1,8 @@
+prefix=/home/splinter/EE_631_AJP/catkin_ws/install
+
+Name: turtlebot_commander
+Description: Description of turtlebot_commander
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/splinter/EE_631_AJP/catkin_ws/install/lib 
+Requires: 

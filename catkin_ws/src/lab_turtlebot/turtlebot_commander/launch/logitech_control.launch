@@ -1,0 +1,15 @@
+<launch>
+  <arg name="rate" default="10"/>
+
+  <node name="joy" pkg="joy" type="joy_node">
+    <param name="autorepeat_rate" value="$(arg rate)"/>
+  </node>
+
+  <node name="joy_throttler" pkg="topic_tools" type="throttle" args="messages joy $(arg rate) joy_throttled"/>
+
+  <rosparam command="load" file="$(find turtlebot_commander)/param/logjoy.yaml" ns="logitech_commander"/>
+  <node name="logitech_commander" pkg="turtlebot_commander" type="logitech_commander_node" output="screen">
+    <remap from="/turtlebot_teleop_joystick/cmd_vel" to="/mobile_base/commands/velocity"/>
+  </node>
+  
+</launch>

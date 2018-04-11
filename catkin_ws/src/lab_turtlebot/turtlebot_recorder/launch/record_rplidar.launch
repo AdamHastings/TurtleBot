@@ -1,0 +1,19 @@
+<launch>
+  <!-- name of recorded bag (~/.ros/name.bag) -->
+  <arg name="name" default="aruco_data"/>
+  
+  <!-- topics to record -->
+  <arg name="bag_topics" default="/odom /mobile_base/commands/velocity /scan /tf /tf_static /vrpn_client_node/Turtlebot/pose"/>
+
+  <!-- launch basic turtlebot software -->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+
+  <!-- node to broadcast laser tf transform -->
+  <node pkg="tf" type="static_transform_publisher" name="laser_tf_broadcaster" args="0.1 -0.08 0.35 3.14159 0 0 base_link laser 100" />  
+  
+ 
+  <!-- rosbag record -->
+  <node name="record" pkg="rosbag" type="record" args="$(arg bag_topics) -o $(arg name)" output="screen"/>
+
+</launch>

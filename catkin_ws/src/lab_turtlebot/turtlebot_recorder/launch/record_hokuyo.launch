@@ -1,0 +1,18 @@
+<launch>
+  <!-- name of recorded bag (~/.ros/name.bag) -->
+  <arg name="name" default="aruco_data"/>
+  
+  <!-- topics to record -->
+  <arg name="bag_topics" default="/odom /mobile_base/commands/velocity /scan /tf /tf_static /vrpn_client_node/turtle_hokuyo/pose"/>
+
+  <!-- launch basic turtlebot software -->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+  
+
+  <!-- launch hokuyo laser -->
+  <node name="hokuyo" pkg="urg_node" type="urg_node" args="/dev/ttyACM0" />  
+ 
+  <!-- rosbag record -->
+  <node name="record" pkg="rosbag" type="record" args="$(arg bag_topics) -o $(arg name)" output="screen"/>
+
+</launch>
